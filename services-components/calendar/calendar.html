@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar Management — River Silvestri | EA Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="calendar-styles.css" />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════
+     PAGE 2 — GCAL + CARDS
+     ═══════════════════════════════════ -->
+    <div class="page" id="page2">
+
+      <div class="p2-layout">
+        <!-- ── GCAL LEFT PANEL ── -->
+        <div class="gcal-panel">
+          <!-- Top navigation bar -->
+          <div class="gcal-nav-bar">
+            <div class="gcal-nb-left">
+              <div class="gcal-logo-mark">
+                <div class="glm-top" style="background: #4285f4"></div>
+                <div class="glm-bottom">
+                  <span style="background: #ea4335"></span
+                  ><span style="background: #fbbc04"></span
+                  ><span style="background: #34a853"></span>
+                </div>
+              </div>
+              <span class="gcal-app-name">Calendar</span>
+            </div>
+            <div class="gcal-nb-center">
+              <button class="gcal-today-btn">Today</button>
+              <button class="gcal-chevron">❮</button>
+              <button class="gcal-chevron">❯</button>
+              <span class="gcal-period">May 2025</span>
+            </div>
+            <div class="gcal-nb-right">
+              <span class="gcal-settings">⚙</span>
+              <div class="gcal-avatar-sm">RS</div>
+            </div>
+          </div>
+
+          <!-- Week day header -->
+          <div class="gcal-week-header">
+            <div class="gcal-gutter-head"></div>
+            <div class="gcal-dh mock-col-head">
+</div>
+            <div class="gcal-dh today-dh">
+              <span class="dh-dow">MON</span
+              ><span class="dh-num dh-today">11</span>
+            </div>
+            <div class="gcal-dh">
+              <span class="dh-dow">TUE</span><span class="dh-num">12</span>
+            </div>
+            <div class="gcal-dh">
+              <span class="dh-dow">WED</span><span class="dh-num">13</span>
+            </div>
+            <div class="gcal-dh">
+              <span class="dh-dow">THU</span><span class="dh-num">14</span>
+            </div>
+            <div class="gcal-dh">
+              <span class="dh-dow">FRI</span><span class="dh-num">15</span>
+            </div>
+          </div>
+
+          <!-- Time grid -->
+          <div class="gcal-body">
+            <!-- Now line -->
+            <div class="gcal-nowline" id="nowLine"></div>
+
+            <!-- Time labels -->
+            <div class="gcal-time-col">
+              <div class="gt" data-h="6">6 AM</div>
+              <div class="gt" data-h="7">7 AM</div>
+              <div class="gt" data-h="8">8 AM</div>
+              <div class="gt" data-h="9">9 AM</div>
+              <div class="gt" data-h="10">10 AM</div>
+              <div class="gt" data-h="11">11 AM</div>
+              <div class="gt" data-h="12">12 PM</div>
+              <div class="gt" data-h="13">1 PM</div>
+              <div class="gt" data-h="14">2 PM</div>
+              <div class="gt" data-h="15">3 PM</div>
+              <div class="gt" data-h="16">4 PM</div>
+              <div class="gt" data-h="17">5 PM</div>
+              <div class="gt" data-h="18">6 PM</div>
+              <div class="gt" data-h="19">7 PM</div>
+            </div>
+
+            <!-- 7 day columns -->
+            <div class="gcal-day-cols">
+
+              <!-- MON -->
+              <div class="gcal-daycol today-col" id="col-mon">
+                <div class="gev sage" style="--st: 6.5; --dur: 1">
+                  <span class="gev-title">Gym</span>
+                  <span class="gev-time">6:30 – 7:30am</span>
+                </div>
+
+                <div class="gev sage" style="--st: 7.5; --dur: 0.75">
+                  <span class="gev-title">Family Breakfast</span>
+                  <span class="gev-time">7:30 – 8:15am</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 8.25; --dur: 0.4">
+                  <span class="gev-title">School Drop-Off, 8:15am</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 9; --dur: 0.5">
+                  <span class="gev-title">Morning Email Review, 9am</span>
+                </div>
+
+                <div class="gev peacock small-text" style="--st: 9.5; --dur: 0.5">
+                  <span class="gev-title">EA Weekly Sync 1:1, 9:30am</span>
+                </div>
+
+                <div
+                  class="gev peacock"
+                  style="
+                    --st: 10.25;
+                    --dur: 1.5;
+                    background: #d7ebf7;
+                    color: #000;
+                    border-left: 3px solid #8ab4d8;
+                  "
+                >
+                  <span class="gev-title"
+                    >📅 Availability for meeting or call:</span
+                  >
+                </div>
+
+                <div class="gev sage" style="--st: 12; --dur: 0.83">
+                  <span class="gev-title">Lunch</span>
+                  <span class="gev-time">12 – 12:50pm</span>
+                </div>
+
+                <div class="gev flam" style="--st: 13; --dur: 1.5">
+                  <span class="gev-title">External Client Calls</span>
+                  <span class="gev-time">1 – 2:30pm</span>
+                </div>
+
+                <div class="gev peacock" style="--st: 14.75; --dur: 1.25">
+                  <span class="gev-title">Internal Team Check-ins</span>
+                  <span class="gev-time">2:45 – 4pm</span>
+
+                  <!-- ONLINE MEETING POPUP -->
+                  <div class="meet-popup right-side" id="meetPopup">
+                    <div class="meet-topbar">
+                      <button>✎</button>
+                      <button>🗑</button>
+                      <button>✉</button>
+                      <button>⋮</button>
+                      <button>✕</button>
+                    </div>
+
+                    <div class="meet-body">
+                      <div class="meet-row">
+                        <div class="meet-color peacock-dot"></div>
+
+                        <div class="meet-content">
+                          <div class="meet-title">Internal Team Check-ins</div>
+
+                          <div class="meet-date">
+                            Monday, May 11 · 2:45 – 4:00pm
+                          </div>
+
+                          <div class="meet-repeat">Weekly on Monday</div>
+                        </div>
+                      </div>
+
+                      <div class="meet-link-row">
+                        <div class="meet-icon">📹</div>
+
+                        <div class="meet-link-content">
+                          <div class="meet-link-title">
+                            Join with Google Meet
+                          </div>
+
+                          <div class="meet-link-url">
+                            meet.google.com/thi-cngg-jcy
+                          </div>
+                        </div>
+
+                        <div class="meet-copy">⧉</div>
+                      </div>
+
+                      <div class="meet-calendar-row">
+                        <div class="meet-cal-icon">🗓</div>
+
+                        <div class="meet-cal-text">River's Calendar</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 16.25; --dur: 0.75">
+                  <span class="gev-title">Admin + Slack Catch-up</span>
+                  <span class="gev-time">4:15 – 5pm</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 17; --dur: 0.67">
+                  <span class="gev-title">Pick Up Kids</span>
+                  <span class="gev-time">5 – 5:40pm</span>
+                </div>
+
+                <div class="gev sage" style="--st: 18; --dur: 1.5">
+                  <span class="gev-title">Family Dinner</span>
+                  <span class="gev-time">6 – 7:30pm</span>
+                </div>
+              </div>
+
+              <!-- TUE -->
+              <div class="gcal-daycol" id="col-tue">
+                <div class="gev sage" style="--st: 6.5; --dur: 1">
+                  <span class="gev-title">Gym</span>
+                  <span class="gev-time">6:30 – 7:30am</span>
+                </div>
+
+                <div class="gev sage" style="--st: 7.5; --dur: 0.75">
+                  <span class="gev-title">Family Breakfast</span>
+                  <span class="gev-time">7:30 – 8:15am</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 8.25; --dur: 0.4">
+                  <span class="gev-title">School Drop-Off, 8:15am</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 9; --dur: 0.5">
+                  <span class="gev-title">Morning Email Review, 9am</span>
+                </div>
+
+                <div
+                  class="gev peacock small-text"
+                  style="--st: 9.5; --dur: 0.5"
+                >
+                  <span class="gev-title"
+                    >Weekly CFO 1:1 - Sarah / River, 9:30am</span
+                  >
+                </div>
+
+                <div class="gev flam small-text" style="--st: 10; --dur: 0.5">
+                  <span class="gev-title"
+                    >25-mins Meeting - Alexa / River, 10am</span
+                  >
+                </div>
+
+                <div
+                  class="gev peacock"
+                  style="
+                    --st: 10.5;
+                    --dur: 1.25;
+                    background: #d7ebf7;
+                    color: #000;
+                    border-left: 3px solid #8ab4d8;
+                  "
+                >
+                  <span class="gev-title"
+                    >📅 Availability for meeting or call:</span
+                  >
+                </div>
+
+                <div class="gev sage" style="--st: 12; --dur: 0.83">
+                  <span class="gev-title">Lunch</span>
+                  <span class="gev-time">12 – 12:50pm</span>
+                </div>
+
+                <div class="gev blue" style="--st: 13; --dur: 2">
+                  <span class="gev-title">Deep Work</span>
+                  <span class="gev-time">1 – 3pm</span>
+                </div>
+
+                <div class="gev lav  small-text" style="--st: 16.25; --dur: 0.75">
+                  <span class="gev-title">Admin + Slack Catch-up</span>
+                  <span class="gev-time">4:15 – 5pm</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 17; --dur: 0.67">
+                  <span class="gev-title">Pick Up Kids</span>
+                  <span class="gev-time">5 – 5:40pm</span>
+                </div>
+
+                <div class="gev sage" style="--st: 18; --dur: 1.5">
+                  <span class="gev-title">Family Dinner</span>
+                  <span class="gev-time">6 – 7:30pm</span>
+                </div>
+              </div>
+
+              <!-- WED -->
+              <div class="gcal-daycol" id="col-wed">
+                <div class="gev sage" style="--st: 7.5; --dur: 0.75">
+                  <span class="gev-title">Family Breakfast</span>
+                  <span class="gev-time">7:30 – 8:15am</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 8.25; --dur: 0.4">
+                  <span class="gev-title">School Drop-Off, 8:15am</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 9; --dur: 0.5">
+                  <span class="gev-title">Morning Email Review, 9am</span>
+                </div>
+
+                <div class="gev blue" style="--st: 10; --dur: 1">
+                  <span class="gev-title">Operations Review</span>
+                  <span class="gev-time">10 – 11am</span>
+                </div>
+
+                <div class="gev sage" style="--st: 12; --dur: 0.83">
+                  <span class="gev-title">Team Lunch</span>
+                  <span class="gev-time">12 – 12:50pm</span>
+                </div>
+
+                <div class="gev peacock" style="--st: 13; --dur: 1">
+                  <span class="gev-title">Weekly COO 1:1 - Ethan Park</span>
+                  <span class="gev-time">1 – 2pm</span>
+                </div>
+
+                <div class="gev blue" style="--st: 14.25; --dur: 1.6">
+                  <span class="gev-title">Deep Work</span>
+                  <span class="gev-time">2:15 – 3:50pm</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 16.25; --dur: 0.75">
+                  <span class="gev-title">Admin + Slack Catch-up</span>
+                  <span class="gev-time">4:15 – 5pm</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 17; --dur: 0.67">
+                  <span class="gev-title">Pick Up Kids</span>
+                  <span class="gev-time">5 – 5:40pm</span>
+                </div>
+
+                <div class="gev sage" style="--st: 18; --dur: 1.5">
+                  <span class="gev-title">Family Dinner</span>
+                  <span class="gev-time">6 – 7:30pm</span>
+                </div>
+              </div>
+
+              <!-- THU -->
+              <div class="gcal-daycol" id="col-thu">
+                <div class="gev sage" style="--st: 6.5; --dur: 1">
+                  <span class="gev-title">Gym</span>
+                  <span class="gev-time">6:30 – 7:30am</span>
+                </div>
+
+                <div class="gev sage" style="--st: 7.5; --dur: 0.75">
+                  <span class="gev-title">Family Breakfast</span>
+                  <span class="gev-time">7:30 – 8:15am</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 8.25; --dur: 0.4">
+                  <span class="gev-title">School Drop-Off, 8:15am</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 9; --dur: 0.5">
+                  <span class="gev-title">Morning Email Review, 9am</span>
+                </div>
+
+                <div class="gev flam" style="--st: 10; --dur: 1.5">
+                  <span class="gev-title">Client / Investor Meetings</span>
+                  <span class="gev-time">10 – 11:30am</span>
+
+                  <div class="meet-popup right-side" id="zoomPopup">
+                    <div class="meet-topbar">
+                      <button>✎</button>
+                      <button>🗑</button>
+                      <button>✉</button>
+                      <button>⋮</button>
+                      <button>✕</button>
+                    </div>
+
+                    <div class="meet-body">
+                      <div class="meet-row">
+                        <div class="meet-color flam-dot" ></div>
+
+                        <div class="meet-content">
+                          <div class="meet-title">
+                            Client / Investor Meetings
+                          </div>
+
+                          <div class="meet-date">
+                            Thursday, May 14 · 10:00 – 11:30am
+                          </div>
+
+                          <div class="meet-repeat">Weekly on Thursday</div>
+
+                          <div class="meet-link-row">
+                            <div class="meet-icon">📹</div>
+
+                            <div class="meet-link-content">
+                              <div class="meet-link-title">
+                                Join Zoom Meeting
+                              </div>
+
+                              <div class="meet-link-url">
+                                ID: 83640907741<br />
+                                Passcode: mcd9fn
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="meet-calendar-row">
+                            <div class="meet-cal-icon">🗓</div>
+
+                            <div class="meet-cal-text">River's Calendar</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gev sage" style="--st: 12; --dur: 0.83">
+                  <span class="gev-title">Lunch</span>
+                  <span class="gev-time">12 – 12:50pm</span>
+                </div>
+
+                <div
+                  class="gev peacock"
+                  style="
+                    --st: 13;
+                    --dur: 2;
+                    background: #d7ebf7;
+                    color: #000;
+                    border-left: 3px solid #8ab4d8;
+                  "
+                >
+                  <span class="gev-title"
+                    >📅 Availability for meeting or call:</span
+                  >
+                </div>
+
+                <div class="gev tomato" style="--st: 15; --dur: 1.5">
+                  <span class="gev-title">Board Meeting</span>
+                  <span class="gev-time">3 – 4:30pm</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 16.5; --dur: 0.5">
+                  <span class="gev-title">Admin + Slack Catch-up, 4:30pm</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 17; --dur: 0.67">
+                  <span class="gev-title">Pick Up Kids</span>
+                  <span class="gev-time">5 – 5:40pm</span>
+                </div>
+
+                <div class="gev sage" style="--st: 18; --dur: 1.5">
+                  <span class="gev-title">Family Dinner</span>
+                  <span class="gev-time">6 – 7:30pm</span>
+                </div>
+              </div>
+
+              <!-- FRI -->
+              <div class="gcal-daycol" id="col-fri">
+                <div class="gev sage small-text" style="--st: 6.75; --dur: 0.75">
+                  <span class="gev-title">Breakfast + Travel Prep</span>
+                  <span class="gev-time">6:45 – 7:30am</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 7.5; --dur: 0.5">
+                  <span class="gev-title">Morning Email Review, 7:30am</span>
+                </div>
+
+                <div
+                  class="gev sage travel-stack start small-text aus"
+                  style="--st: 8; --dur: 0.67"
+                >
+                  <span class="gev-title"
+                    >Transfer to Austin Airport (AUS)</span
+                  >
+                  <span class="gev-time">8 – 8:40am</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 8.75; --dur: 0.67">
+                  <span class="gev-title">Lounge Time</span>
+                  <span class="gev-time">8:45 – 9:25am</span>
+                </div>
+
+                <div
+                  class="gev"
+                  style="
+                    --st: 9.58;
+                    --dur: 2.58;
+                    background: #8e24aa;
+                    color: #fff;
+                    border-left: 3px solid #5e1480;
+                  "
+                >
+                  <span class="gev-title"
+                    >Flight from AUS → JFK (American Airlines AA1452 /
+                    #RVR82Q)</span
+                  >
+                  <span class="gev-time">9:35am – 12:10pm</span>
+                </div>
+
+                <div class="gev sage small-text" style="--st: 12.16; --dur: 0.84">
+                  <span class="gev-title">Car Service to Manhattan</span>
+                  <span class="gev-time">12:10 – 1pm</span>
+                </div>
+
+                <div class="gev sage" style="--st: 13; --dur: 1">
+                  <span class="gev-title">Hotel Check-In</span>
+                  <span class="gev-time">1 – 2pm</span>
+                </div>
+
+                <div class="gev lav small-text" style="--st: 15.25; --dur: 0.75">
+                  <span class="gev-title">Admin + Slack Catch-up</span>
+                  <span class="gev-time">3:15 – 4pm</span>
+                </div>
+
+                <div class="gev tomato" style="--st: 16.5; --dur: 1.5">
+                  <span class="gev-title">Investor Dinner Meeting – SoHo</span>
+                  <span class="gev-time">4:30 – 6pm</span>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+        <!-- /gcal-panel -->
+
+        <!-- ── FEATURE CARDS RIGHT PANEL ── -->
+        <div class="feat-panel">
+          
+          <div class="fp-header">
+            <div class="instruction-tip">
+              <div class="tip-icon">💡</div>
+              <div class="tip-content">
+                <div class="tip-title">Calendar Management</div>
+<div class="tip-sub">Hover over any card below<br>to see it highlight on the calendar.</div>              </div>
+            </div>
+          </div>
+
+          <div class="fp-cards" id="fpCards">
+            <div class="fc" data-f="timezone">
+              <div class="fc-ico" style="background: #e8f0fe">🌐</div>
+              <div class="fc-txt">
+                <div class="fc-name">Cross-Timezone Meetings</div>
+                <div class="fc-desc">
+Managed meetings across different time zones with clear and conflict-free scheduling.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="avail">
+              <div class="fc-ico" style="background: #e6f4ea">📅</div>
+              <div class="fc-txt">
+                <div class="fc-name">GCal / Calendly Booking</div>
+                <div class="fc-desc">
+  Organized booking availability to make scheduling faster and easier.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="lunch">
+              <div class="fc-ico" style="background: #e6f4ea">🥗</div>
+              <div class="fc-txt">
+                <div class="fc-name">Lunch Blocks</div>
+                <div class="fc-desc">
+  Protected lunch breaks to maintain a balanced and productive schedule.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="deepwork">
+              <div class="fc-ico" style="background: #fce8e6">🎯</div>
+              <div class="fc-txt">
+                <div class="fc-name">Deep Work Blocks</div>
+                <div class="fc-desc">
+  Reserved focus time for important work with minimal interruptions.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="recurring">
+              <div class="fc-ico" style="background: #e8eaf6">🔄</div>
+              <div class="fc-txt">
+                <div class="fc-name">Recurring Events</div>
+                <div class="fc-desc">
+                  Daily · Weekly · Bi-weekly 
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="onetone">
+              <div class="fc-ico" style="background: #fff3e0">🤝</div>
+              <div class="fc-txt">
+                <div class="fc-name">1:1 Meetings</div>
+                <div class="fc-desc">
+  Coordinated 1:1 meetings and supported schedule preparation.
+                </div>
+              </div>
+            </div>
+
+            
+
+            <div class="fc" data-f="buffer">
+              <div class="fc-ico" style="background: #f1f3f4">⏱️</div>
+              <div class="fc-txt">
+                <div class="fc-name">Buffer Time</div>
+                <div class="fc-desc">
+  Added buffer time between meetings for transitions and follow-ups.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="travel">
+              <div class="fc-ico" style="background: #e8f0fe">✈️</div>
+              <div class="fc-txt">
+                <div class="fc-name">Travel Blocks</div>
+                <div class="fc-desc">
+  Organized travel schedules, pickups, and itinerary timing.
+                </div>
+              </div>
+            </div>
+
+            <div class="fc" data-f="video">
+              <div class="fc-ico" style="background: #e6f4ea">📹</div>
+              <div class="fc-txt">
+                <div class="fc-name">Google Meet / Zoom</div>
+                <div class="fc-desc">
+  Prepared virtual meetings with complete and accessible meeting links.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /fp-cards -->
+        </div>
+        <!-- /feat-panel -->
+      </div>
+      <!-- /p2-layout -->
+    </div>
+
+    <!-- CROSS TIMEZONE HOVER POPUP -->
+    <div class="tz-popup" id="tzPopup">
+      <div class="tz-head">
+        <div class="tz-badge">🌐 Cross-Timezone Coordination</div>
+      </div>
+
+      <div class="tz-title">25-min Meeting — Alexa / River</div>
+
+      <div class="tz-sub">
+        Perfectly matched availability between New York City and Texas
+        schedules.
+      </div>
+
+      <div class="tz-grid">
+        <div class="tz-card">
+          <div class="tz-city">Alexa</div>
+          <div class="tz-time">Tue · 11:00 AM</div>
+          <div class="tz-zone">New York City, New York · EST (UTC-5)</div>
+        </div>
+
+        <div class="tz-arrow">⇄</div>
+
+        <div class="tz-card">
+          <div class="tz-city">River</div>
+          <div class="tz-time">Tue · 10:00 AM</div>
+          <div class="tz-zone">Austin, Texas · CST (UTC-6)</div>
+        </div>
+      </div>
+
+      <div class="tz-footer">
+        Availability overlap identified and scheduled without conflict.
+      </div>
+    </div>
+
+    <script src="calendar-script.js"></script>
+  </body>
+</html>
