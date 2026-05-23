@@ -32,6 +32,50 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Meeting Agenda Pagination Logic
+
+function toggleAgenda(page, element) {
+
+    // 1. Update the active pink button state
+
+    const buttons = element.parentElement.querySelectorAll('.toggle-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    element.classList.add('active');
+
+
+
+    // 2. Grab the images
+
+    const page1 = document.getElementById('agenda-page-1');
+
+    const page2 = document.getElementById('agenda-page-2');
+
+
+
+    // 3. Hide both pages first
+
+    page1.classList.add('hidden');
+
+    page2.classList.add('hidden');
+
+
+
+    // 4. Show only the clicked page
+
+    if (page === 'page1') {
+
+        page1.classList.remove('hidden');
+
+    } else if (page === 'page2') {
+
+        page2.classList.remove('hidden');
+
+    }
+
+}
+
 /* =========================================
    SERVICES TOGGLE LOGIC
    ========================================= */
