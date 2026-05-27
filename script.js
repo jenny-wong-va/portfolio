@@ -188,49 +188,49 @@ function toggleEvent(page, btnElement) {
 }
 
 /* =========================================
-   MODAL LOGIC (CONTACT & QR)
+   MODAL LOGIC (CONTACT & QR) - HIDE
    ========================================= */
 
-function openContactModal() {
-    const modal = document.getElementById('contact-modal');
-    if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; 
-    }
-}
+// function openContactModal() {
+//     const modal = document.getElementById('contact-modal');
+//     if (modal) {
+//         modal.classList.add('show');
+//         document.body.style.overflow = 'hidden'; 
+//     }
+// }
 
-function closeContactModal() {
-    const modal = document.getElementById('contact-modal');
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = ''; 
-    }
-}
+// function closeContactModal() {
+//     const modal = document.getElementById('contact-modal');
+//     if (modal) {
+//         modal.classList.remove('show');
+//         document.body.style.overflow = ''; 
+//     }
+// }
 
-function openQRModal() {
-    const modal = document.getElementById('qr-modal');
-    if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; 
-    }
-}
+// function openQRModal() {
+//     const modal = document.getElementById('qr-modal');
+//     if (modal) {
+//         modal.classList.add('show');
+//         document.body.style.overflow = 'hidden'; 
+//     }
+// }
 
-function closeQRModal() {
-    const modal = document.getElementById('qr-modal');
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = ''; 
-    }
-}
+// function closeQRModal() {
+//     const modal = document.getElementById('qr-modal');
+//     if (modal) {
+//         modal.classList.remove('show');
+//         document.body.style.overflow = ''; 
+//     }
+// }
 
-// Master Background Click Listener
-window.addEventListener('click', function(event) {
-    const contactModal = document.getElementById('contact-modal');
-    const qrModal = document.getElementById('qr-modal');
+// // Master Background Click Listener
+// window.addEventListener('click', function(event) {
+//     const contactModal = document.getElementById('contact-modal');
+//     const qrModal = document.getElementById('qr-modal');
     
-    if (event.target === contactModal) closeContactModal();
-    if (event.target === qrModal) closeQRModal();
-});
+//     if (event.target === contactModal) closeContactModal();
+//     if (event.target === qrModal) closeQRModal();
+// });
 
 /* =========================================
    INTERACTIVE SWIPE BUTTON

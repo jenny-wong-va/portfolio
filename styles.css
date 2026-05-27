@@ -475,11 +475,11 @@ body {
 .submit-btn { width: 100%; margin-top: 10px; display: flex; justify-content: center; }
 
 /* =========================================
-   WHATSAPP QR MODAL STYLING
+   WHATSAPP QR MODAL STYLING (HIDE)
    ========================================= */
 
-.qr-popup {
-    max-width: 350px; /* Slimmer box than the contact form */
+/* .qr-popup {
+    max-width: 350px; 
     text-align: center; 
     display: flex;
     flex-direction: column;
@@ -510,7 +510,7 @@ body {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Adds depth to the QR code */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -530,7 +530,7 @@ body {
 
 .qr-number strong {
     color: var(--text-primary);
-}
+} */
 
 /* =========================================
    11. MOBILE RESPONSIVENESS RULES
